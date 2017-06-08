@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body {
   background: #ffe6e6;
+  background-image: url("Opera.jpg");
   padding: 80px 0 0 0;
 }
 header {
@@ -124,7 +125,7 @@ ul.list#completed {
   padding: 60px 0 0 0;
 }
 
-ul.list#completed:not(:empty):before{
+ul.list#completed:before{
   content: '';
   width:150px;
   height: 1px;
@@ -134,4 +135,21 @@ ul.list#completed:not(:empty):before{
   left: 50%;
 
   margin: 0 0 0 -75px;
+}
+
+ul.list#list:empty:after {
+content : 'Your list is empty !'
+}
+
+ul.list#completed:empty:after {
+ content : 'completed tasks goes here ..'
+}
+
+ul.list#list:after,
+ul.list#completed:after {
+  width:100%;
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #666666;
 }
