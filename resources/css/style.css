@@ -118,3 +118,20 @@ ul.list li .buttons button {
   font-weight: 500;
   cursor: pointer;
 }
+
+ul.list#completed {
+  position: relative;
+  padding: 60px 0 0 0;
+}
+
+ul.list#completed:not(:empty):before{
+  content: '';
+  width:150px;
+  height: 1px;
+  background: #ff4d88;
+  position:absolute;
+  top: 30px;
+  left: 50%;
+
+  margin: 0 0 0 -75px;
+}
