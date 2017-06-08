@@ -16,13 +16,10 @@ function removeItem(){
 function completeItem(){
   var item = this.parentNode.parentNode;
   var parent = item.parentNode;
-  var id = parent.id
-  var target
-  if (id === 'list'){
-    target = document.getElementById("completed")
-  }else {
-    target = document.getElementById('list')
-  }
+  var id = parent.id;
+  
+  var target = (id ==='list') ? document.getElementById("completed") : document.getElementById('list')
+
   parent.removeChild(item)
   target.insertBefore(item, target.childNodes[0]);
 
@@ -44,7 +41,7 @@ function addItemToList(item){
    var complete = document.createElement('button');
    complete.classList.add('complete')
    complete.innerHTML = "done"
-   remove.addEventListener('click', completeItem);
+   complete.addEventListener('click', completeItem);
 
    buttons.appendChild(remove);
    buttons.appendChild(complete);
