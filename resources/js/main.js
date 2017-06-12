@@ -30,13 +30,34 @@ function completeItem(){
 
   parent.removeChild(item)
   target.insertBefore(item, target.childNodes[0]);
-
+   target.removeEventListener('click',edit, false);
 }
+
+function edit(){
+  var item = this.parentNode.parentNode;
+  var id = item.id;
+  if (id == 'list'){
+    var span = this;
+    span.setAttribute('contenteditable', true);
+    span.focus();
+  } else {
+    alert("You cannot edit any item under completed list ")
+  }
+}
+
 
 function addItemToList(item){
   var lis = document.getElementById('list');
+
   var el = document.createElement('li');
-  el.innerText = item ;
+  var text = document.createElement('div');
+
+  text.innerText = item ;
+  el.appendChild(text);
+
+  text.classList.add('edit')
+  text.addEventListener('click', edit, true);
+
 
   var buttons = document.createElement('div');
   buttons.classList.add('buttons');
