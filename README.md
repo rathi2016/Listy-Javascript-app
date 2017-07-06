@@ -5,4 +5,4 @@
 - Used Css styling tricks.
 
 
-![Screen shot of app](/css/screenshot.png)
+![Screen shot of app](resources/css/screenshot.jpg)
