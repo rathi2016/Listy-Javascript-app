@@ -1,5 +1,5 @@
 document.getElementById('addItem').addEventListener('click', buttonClick);
-
+// trigger button on click of enter button 
 document.getElementById('item').addEventListener("keyup", function(event) {
   event.preventDefault();
   if (event.keyCode == 13) {
@@ -73,7 +73,7 @@ function completeItem(){
   target.insertBefore(item, target.childNodes[0]);
   //  REMOVE ON-CLICK EDIT OPTION ON COMPLETED ITEM
    target.removeEventListener('click',edit, false);
-   
+
 }
 
 function edit(){
